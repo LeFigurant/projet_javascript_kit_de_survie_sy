@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>API</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+    	$(document).ready(function()
+        {
+            $('form').submit(function(name){    
+                value = $('input[name=reponse]').val();
+                console.log(value);
+                name = $('#name').val();
+                $.getJSON("https://geo.api.gouv.fr/communes?"+name+"="+value,'JSON',function(data){
+                    console.log(data);
+                    $("#reponse").html("");
+                    $.each(data,function(i,d){
+                        $("#reponse").append("<ul>"+
+                        "<li>"+d.nom+"</li>"+
+                        "<li>code: "+d.code+"</li>"+
+                        "<li>code Département: "+d.codeDepartement+"</li>"+
+                        "<li>code Région: "+d.codeRegion+"</li>"+
+                        "<li>Code Postal: "+d.codesPostaux+"</li>"+
+                        "<li>Population:"+d.population+"</li>"+
+                        "</ul>");
+                    })
+                });
+                return false;
+            });
+        });
+    
+    </script>
+</head>
+<body>
+    <form action="" method="GET">
+        <select name="nom" id="name">
+            <option value="nom">Nom</option>
+            <option value="codePostal">Code Postal</option>
+            <option value="codeDepartement">Code Departement</option>
+        </select>
+        <input type="text" name="reponse">
+        <input type="submit" value="Valider">
+    </form>
+    <div id="reponse">
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Kit surive JS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+            body{ font-family: 'Quicksand', sans-serif; }
+    
+            
+        </style>
+
+    <script src="jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+    	$(document).ready(function()
+        {
+            $('#cont1').click(function()
+            { 
+                $('#div1').load('chargement.html #chargement',function()
+                {
+                    $('#div1').load('exo1.php #conteneur1',function(){alert('fichier charger')});
+                });
+                });
+            $('#cont2').click(function()
+            {
+                $('#div2').load('chargement.html #chargement',function()
+                {
+                    $('#div2').load('exo1.php #conteneur2',function(){alert('Fichier charger')});
+                });
+               
+            });
+        });
+   	</script>
+    
+</head>
+<body>
+    <input id="cont1" type="submit" value="conteneur1">
+    <div id="div1"></div> 
+    <input id="cont2" type="submit" value="conteneur2">
+    <div id="div2"></div> <br>
+</body>
+</html>

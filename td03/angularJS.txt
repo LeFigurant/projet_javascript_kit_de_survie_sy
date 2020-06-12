@@ -1,0 +1,30 @@
+Hey, pour ceux qui veulent les consignes du dernier exo du tp3 de js:
+Gestion des erreurs dans un formulaire avec AngularJS:
+L'id�e ici est de faire un formulaire assez dense (type inscription sur Facebook), avec beaucoup d'information � fournir 
+(nom, pr�nom, mot de passe, confirmation du mot de passe, adresse mail, date de naissance, num�ro de t�l�phone, etc.).
+ Ensuite, AngularJS poss�de toute une m�canique assez pouss�e qui permet de v�rifier l'int�grit� du formulaire champ par champ
+ avant d'autoriser l'utilisateur � soumettre le formulaire. 
+ Le but est donc de faire en sorte que le bouton d'envoie du formulaire ne soit actif que si tous les champs satisfont
+ toutes les contraintes. Si un champ pr�sente une erreur, il faut alors afficher l'erreur � l'utilisateur. 
+ Le tout, en AngularJS. La documentation d'AngularJS est assez riche concernant les m�canismes de v�rification, 
+et tu peux aussi t'appuyer sur les exemples disponibles ici : https://www.w3schools.com/angular/angular_validation.asp.
+Plugin d�autocompl�tion jQuery:
+Dans cet exercice, on cherche � faire un plugin qui permet l'auto-compl�tion d'un champ de texte � la mani�re du terminal. Le comportement � reproduire est le suivant: 
+Le plugin doit s'appeler sur un ou plusieurs champs de la page de la mani�re suivante:$("input:text").monplugindautocompletion(words); (le nom du plugin n'est pas obligatoirement celui-ci  )
+La variable "words" correspond � la liste des mots qui peuvent �tre compl�t�s (par exemple une liste de fruits: var words = ["fraise", "banane", ... , "cerise"];
+Si le plugin est appel� sur un champ, l'utilisateur peut alors commencer � taper un mot (par exemple "fra" pour "fraise") et appuyer sur la touche Tab. Si le d�but de mot tap� dans le champ correspond au d�but d'un des mots du tableau "words", on compl�te le champ par le morceau restant (par exemple ici, si l'on tape "fra" et que l'on appuie sur "tab", alors le contenu du champ est compl�t� en devenant "fraise"). Si le d�but de mot tap� ne correspond � aucun mot de la liste, rien ne se passe.
+Attention toutefois, binder un �v�nement sur la touche "tab" n'est pas toujours simple
+??
+1
+Application Todo liste en Javascript
+Exercice classique, mais qui met bien en oeuvre le cours de jQuery et la manipulation des �l�ments. 
+Ici l'id�e est de faire une application type "Todo list" dans laquelle l'utilisateur a un formulaire tr�s simple lui permettant 
+d'ajouter un �l�ment � la liste (un champ de texte et un bouton submit). Lorsque le formulaire est soumis, 
+l'�l�ment s'ajoute � la liste des �l�ments d�j� pr�sents. Pour chaque �l�ment de la liste, 
+l'utilisateur peut au choix le supprimer ou modifier son contenu. 
+L'utilisateur peut aussi r�organiser la liste � l'aide du plugin "sortable" de jQuery UI (cf. TP n�3, exercice 1.b). 
+Enfin, si l'utilisateur rafra�chi la page, la liste ne doit pas disparaitre, et son ordre doit �tre conserv�. 
+Pour cela, on utilisera la propri�t� "local storage" de Javascript, qui permet de stocker des variables dans le client, 
+et de les r�cup�rer lors d'un rechargement ou d'un nouvel appel de la page.
+
+Ah et j'ai oublié, vous pouvez ne faire qu'un seul de ces trois sujets si vous voulez. Il faut en faire minimum un

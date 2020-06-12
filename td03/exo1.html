@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Kit de Survie JS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="jquery-ui-1.12.1/jquery-ui.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="jquery-ui-1.12.1/jquery-ui.min.js"></script>
+    <script>
+        $(document).ready(function(){   
+        $(function($){
+
+        $(function() {
+            $( "#mousedrag" ).draggable({
+                containment:"parent",
+                create: function(event,ui){
+                    console.log("height : "+this.innerheight+" width : "+this.innerwidth);
+                }
+            });
+        });
+    });
+        $('input[type="button"]').click(function(){
+            $('#sort').sortable();
+        });
+    });
+    </script>
+    <style>
+
+        fieldset{
+            height: 200px;
+        }
+        #mousedrag{
+            width: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <fieldset>
+            <div class="ui-state-error ui-corner-all" id="mousedrag">
+                test
+            </div>
+        </fieldset>
+        <div>
+            <ul id="sort">
+                <li>1er</li>
+                <li>2eme</li>
+                <li>3eme</li>
+                <li>4eme</li>
+                <li>5eme</li>
+            </ul>
+            <input type="button" value="Ordre ?">
+        </div>
+    </div>
+</body>
+</html>

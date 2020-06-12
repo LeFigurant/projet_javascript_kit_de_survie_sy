@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Pluging</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="jquery-ui-1.12.1/jquery-ui.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+    $(document).ready(function(){
+        $.fn.agrandir = function(){
+                this.each(function(){
+                    $('p').hover(function(){
+                        $(this).css('font-size','120%');
+                    },function(){
+                        $(this).css('font-size','100%');
+                    })
+                });
+                return this;
+            }
+            $('p').agrandir();
+    });S
+        </script>
+</head>
+
+<body>
+    <p> test test tstttettet </p>
+</body>
+</html>

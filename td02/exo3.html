@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+    	$(document).ready(function(){
+    		$.getScript('functions.php',function(data)
+            {
+                console.log('scrip chercher');
+            })
+
+            $('form').submit(function()
+            {
+                n1 = $('input[name=n1]').val()
+                console.log(isPrime(n1));
+
+                return false;
+            })
+    	});
+   	</script>
+</head>
+<body>
+    <div>
+        <form action="" method="GET">
+            <input type="number" name="n1">
+            <input type="submit" value="isPrime" id="function">
+        </form>
+    </div>
+    
+</body>
+</html>

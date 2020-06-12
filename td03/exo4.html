@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js">
+</script>
+<body>
+
+<div ng-app="app01" ng-controller="controlleur01">
+<input type="number" ng-model="numbers.n1" required>
+<input type="number" ng-model="numbers.n2" required>
+<select ng-model="selectoperateur" ng-options="x for x in operateurs ">
+</select>
+<h3>Résultat !</h3>
+<h1 id="Resultat">{{ numbers.n1 }} {{ selectoperateur }} {{ numbers.n2 }} = {{ resultat(numbers.n1,numbers.n2,selectoperateur) }}</h1> 
+</div>
+
+
+<script>
+var app = angular.module("app01", []);
+app.controller("controlleur01", function($scope){
+    $scope.numbers={n1: 0,n2: 0};
+    $scope.operateurs = ["+","-","*","/"];
+    $scope.resultat=function(n1,n2,operateur){
+        if(operateur == "+"){
+            return n1+n2;
+        }
+        if(operateur == "-"){
+            return n1-n2;
+        }
+        if(operateur == "*"){
+            return n1*n2;
+        }
+        if(operateur == "/"){
+            return n1/n2;
+        }
+    }
+});
+</script>
+
+</body>
+</html>

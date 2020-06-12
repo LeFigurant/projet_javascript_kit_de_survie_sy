@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js">
+</script>
+<style>
+    input.ng-invalid {
+        background-color: pink;
+    }
+    </style>
+<body>
+
+<div ng-app="app01" ng-controller="controlleur01">
+    <form ng-submit="submit()">
+        <input type="text" ng-model="user.firstname" minlength="1" required><br> 
+        <input type="text" ng-model="user.lastname" minlength ="1" required><br>
+        <input type="email" ng-model="user.email" required><br>
+        <input type="number" ng-model="user.telephone" minlength="2"><br>
+        <input type="date" ng-model="user.birth" required><br>
+        <input type="password" ng-model="user.mdp" minlength="6" required><br>
+        <input type="password" ng-model="validemdp" minlength="6" required><br>
+        <input type="submit" value="Valider">
+    </form>
+    <p>{{ test }}</p>
+</div> 
+
+
+<script>
+var app = angular.module("app01", []);
+app.controller("controlleur01", function($scope){
+    $scope.user={firstname: "John",lastname:"Doe",email:"exemple@test.fr",telephone:0,birth:0,mdp:""};
+    $scope.validemdp="";
+    $scope.submit=function(){
+        $scope.test = "Submited";
+    }
+});
+</script>
+
+</body>
+</html>
